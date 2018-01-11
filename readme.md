@@ -25,3 +25,5 @@ Use a particular style
 
 1 through 4 is available. Below a image with all the different styles in order.
 
+
+![](https://raw.githubusercontent.com/JeroenSormani/really-good-faq/master/assets/img/really-good-faq-styles.png)
