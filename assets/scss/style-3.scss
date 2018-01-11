@@ -1,0 +1,39 @@
+$border-color: #ddd;
+$accent-color: #0074E4;
+$font-color: #3a3a3a;
+$font-hover-color: #0074E4;
+
+.faq-list.style-3 {
+	display: block;
+	position: relative;
+
+	.faq {
+		$faq: &;
+		width: 33.33333%;
+		padding-left: 15px;
+		padding-right: 15px;
+		//float: left;
+		display: inline-block;
+		vertical-align: top;
+		box-sizing: border-box;
+		margin-top: 40px;
+
+		.faq-head {
+
+		}
+		.question {
+			font-size: 20px;
+			font-weight: 600;
+		}
+
+		.faq-head-sub:before {
+
+		}
+
+		.answer {
+			font-size: 16px;
+			line-height: 28px;
+			color: $font-color;
+		}
+	}
+}

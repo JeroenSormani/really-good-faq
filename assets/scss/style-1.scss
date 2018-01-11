@@ -1,0 +1,60 @@
+$border-color: #eee;
+$font-color: #3a3a3a;
+$font-hover-color: #009fff;
+
+.faq-list.style-1 {
+
+	.faq {
+		$faq: &;
+
+		.question {
+			border-top: 1px solid $border-color;
+			padding: 25px 15px;
+			border-bottom: 0;
+			font-size: 20px;
+			font-weight: bold;
+			display: block;
+		}
+		&:last-of-type {
+			border-bottom: 1px solid $border-color;
+		}
+		.faq-head {
+			position: relative;
+			cursor: pointer;
+			color: $font-color;
+
+			&:hover .question, &:hover .faq-head-sub:before {
+				color: $font-hover-color;
+			}
+		}
+		.faq-head-sub:before {
+			content: "\25BE";
+			font-weight: bold;
+			color: #3a3a3a;
+			font-size: 1.7rem;
+			position: absolute;
+			float: right;
+			top: 50%;
+			right: 15px;
+			transform: translateY(-50%) rotate(90deg);
+			transition: transform 400ms;
+			-webkit-backface-visibility: hidden;
+			-webkit-transform: translateY(-50%) rotate(90deg) translateZ(0) scale(1.0, 1.0);
+		}
+		&.open .faq-head-sub:before {
+			transform: translateY(-50%) rotate(0deg);
+		}
+
+		.answer {
+			font-size: 18px;
+			line-height: 28px;
+			color: $font-color;
+			padding: 10px 15px 25px 15px;
+			display: none;
+
+			p:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
