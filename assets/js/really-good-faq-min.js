@@ -1,1 +1,0 @@
-jQuery(function($){$(".faq-list.style-1 .faq-head, .faq-list.style-2 .faq-head, .faq-list.style-4 .faq-head").on("click",function(a){var e=$(this).parents(".faq");e.toggleClass("open"),e.find(".answer").slideToggle()})});
