@@ -17,6 +17,9 @@ function enqueue_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'Really_Good_FAQ\enqueue_scripts' );
 
+/**
+ * Include JS directly in footer.
+ */
 function print_scripts() {
     ?><script type="text/javascript">
 		var selector = ".faq-list.style-1 .faq-head, .faq-list.style-2 .faq-head, .faq-list.style-4 .faq-head";

@@ -52,10 +52,10 @@ class Question {
 			'rewrite'              => false,
 			'capability_type'      => 'post',
 			'has_archive'          => true,
-			'hierarchical'         => false,
+			'hierarchical'         => true,
 			'menu_position'        => null,
 			'menu_icon'            => 'dashicons-admin-post',
-			'supports'             => array( 'title', 'editor' ),
+			'supports'             => array( 'title', 'editor', 'page-attributes' ),
 		);
 
 		register_post_type( 'question', $post_type_args );

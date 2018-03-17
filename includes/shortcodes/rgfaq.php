@@ -35,6 +35,11 @@ class RGFAQ {
 		$query_args = array(
 			'post_type' => 'question',
 			'posts_per_page' => absint( $atts['count'] ),
+			'orderby' => 'menu_order',
+			'order' => 'ASC',
+			'no_found_rows' => true,
+			'update_post_meta_cache' => false,
+			'update_post_term_cache' => false,
 		);
 
 		if ( ! empty( $atts['categories'] ) ) {
@@ -43,6 +48,7 @@ class RGFAQ {
 				'taxonomy' => 'faq_category',
 				'field' => 'slug',
 				'terms' => (array) $categories,
+				'include_children' => false,
 			);
 		}
 
