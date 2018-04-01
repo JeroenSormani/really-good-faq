@@ -49,11 +49,24 @@ $font-hover-color: #009fff;
 			font-size: 18px;
 			line-height: 28px;
 			color: $font-color;
-			padding: 10px 15px 25px 15px;
-			display: none;
+			//padding: 10px 15px 25px 15px;
+			transition: height .25s linear, padding .25s linear;
+			padding: 0 15px 0 15px !important;
+			height: 0;
+			overflow: hidden;
+			box-sizing: content-box;
 
 			p:last-of-type {
 				margin-bottom: 0;
+			}
+		}
+
+		// Open state
+		&.open {
+
+			.answer {
+				padding: 10px 15px 25px 15px !important;
+				height: auto;
 			}
 		}
 	}

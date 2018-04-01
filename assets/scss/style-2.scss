@@ -61,11 +61,23 @@ $font-hover-color: #0074E4;
 			font-size: 16px;
 			line-height: 28px;
 			color: $font-color;
-			padding: 0 15px 25px 15px;
-			display: none;
+			transition: height .25s linear, padding .25s linear;
+			padding: 0 15px 0 15px;
+			height: 0;
+			overflow: hidden;
+			box-sizing: content-box;
 
 			p:last-of-type {
 				margin-bottom: 0;
+			}
+		}
+
+		// Open state
+		&.open {
+
+			.answer {
+				height: auto;
+				padding: 0 15px 15px 15px;
 			}
 		}
 	}

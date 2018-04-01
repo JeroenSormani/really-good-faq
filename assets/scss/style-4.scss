@@ -51,9 +51,21 @@ $font-hover-color: #0074E4;
 		}
 
 		.answer {
-			padding: 15px;
+			padding: 0 15px;
 			position: relative;
-			display: none;
+			transition: height .4s linear, padding .4s linear;
+			height: 0;
+			overflow: hidden;
+			box-sizing: content-box;
+		}
+
+		// Open state
+		&.open {
+
+			.answer {
+				padding: 15px;
+				height: auto;
+			}
 		}
 	}
 }

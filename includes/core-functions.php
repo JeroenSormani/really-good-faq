@@ -25,9 +25,16 @@ function print_scripts() {
 		var selector = ".faq-list.style-1 .faq-head, .faq-list.style-2 .faq-head, .faq-list.style-4 .faq-head";
 		[].forEach.call(document.querySelectorAll(selector), function(el) {
 			el.addEventListener("click", function() {
-				var faq = el.parentNode;
+				var faq = el.parentNode,
+					answer = faq.querySelector('.answer');
+
+				// The following 2 lines are ONLY needed if you ever want to start in a 'open' state. Due to the way browsers
+				// work it needs a double of this (or something like console.log(el.scrollHeight);) to prevent the render skipping
+				answer.style.height = answer.scrollHeight + 'px';
+				answer.scrollHeight = answer.scrollHeight + 'px'; // Something like console.log(answer.scrollHeight); also works, just something to prevent render skipping
+
 				faq.classList.toggle('open');
-				jQuery(faq).find('.answer').slideToggle() // Almost jQuery free
+				answer.style.height = faq.classList.contains('open') ? answer.scrollHeight + 'px' : 0;
 			});
 		});
 	</script><?php
