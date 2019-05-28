@@ -42,12 +42,13 @@ class RGFAQ {
 			'update_post_term_cache' => false,
 		);
 
-		if ( ! empty( $atts['categories'] ) ) {
+		if ( ! empty( $atts['categories'] ) || ! empty( $atts['category'] ) ) {
 			$categories = array_map( 'sanitize_key', preg_split( '/\s*,\s*/', $atts['categories'] ) );
+
 			$query_args['tax_query'][] = array(
 				'taxonomy' => 'faq_category',
 				'field' => 'slug',
-				'terms' => (array) $categories,
+				'terms' => array_merge( (array) $categories, array( $atts['category'] ) ),
 				'include_children' => false,
 			);
 		}
@@ -57,18 +58,19 @@ class RGFAQ {
 		wp_enqueue_style( 'really-good-faq-style-' . absint( $atts['style'] ) );
 
 		ob_start();
-			?><div class="faq-list <?php echo sprintf( 'style-%d', $atts['style'] ); ?>"><?php
-				foreach ( $faqs->posts as $question ) {
-					?><div class="faq">
-						<div class="faq-head">
-							<div class="question"><?php echo wp_kses_post( $question->post_title ); ?></div>
-							<span class="faq-head-sub"></span>
-						</div>
-						<div class="answer"><?php echo wp_kses_post( wpautop( $question->post_content ) ); ?></div>
-					</div><?php
-				}
-			?></div><?php
-
+			if ( $faqs->posts ) :
+				?><div class="faq-list <?php echo sprintf( 'style-%d', $atts['style'] ); ?>"><?php
+					foreach ( $faqs->posts as $question ) {
+						?><div class="faq">
+							<div class="faq-head">
+								<div class="question"><?php echo wp_kses_post( $question->post_title ); ?></div>
+								<span class="faq-head-sub"></span>
+							</div>
+							<div class="answer"><?php echo wp_kses_post( wpautop( $question->post_content ) ); ?></div>
+						</div><?php
+					}
+				?></div><?php
+			endif;
 		return ob_get_clean();
 	}
 
