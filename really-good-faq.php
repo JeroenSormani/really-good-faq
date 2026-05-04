@@ -9,6 +9,14 @@ class Really_Good_FAQ {
 	public $file = __FILE__;
 
 	private static  $instance;
+	/**
+	 * @var array|Post_Types\Question[]
+	 */
+	private $post_types;
+	/**
+	 * @var Admin\Admin
+	 */
+	private $admin;
 
 
 	/**

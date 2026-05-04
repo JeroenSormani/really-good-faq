@@ -13,7 +13,7 @@ class Admin {
 	 * @since  1.0.0
 	 */
 	public function __construct() {
-		
+
 	}
 
 
@@ -23,7 +23,7 @@ class Admin {
 	 * @since  1.0.0
 	 */
 	public function init() {
-		
+
 		// Include files
 		$this->includes();
 
@@ -38,7 +38,7 @@ class Admin {
 	 * @since  1.0.0
 	 */
 	public function includes() {
-				
+
 
 	}
 

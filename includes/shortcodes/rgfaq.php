@@ -61,7 +61,7 @@ class RGFAQ {
 			if ( $faqs->posts ) :
 				?><div class="faq-list <?php echo sprintf( 'style-%d', $atts['style'] ); ?>"><?php
 					foreach ( $faqs->posts as $question ) {
-						?><div class="faq">
+						?><div class="faq" id="<?php echo sanitize_title( $question->post_title ); ?>">
 							<div class="faq-head">
 								<div class="question"><?php echo wp_kses_post( $question->post_title ); ?></div>
 								<span class="faq-head-sub"></span>
