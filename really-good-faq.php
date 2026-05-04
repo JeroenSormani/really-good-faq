@@ -17,6 +17,10 @@ class Really_Good_FAQ {
 	 * @var Admin\Admin
 	 */
 	private $admin;
+	/**
+	 * @var array|Taxonomies\Taxonomy_FAQ_Category[]
+	 */
+	private $taxonomies;
 
 
 	/**
